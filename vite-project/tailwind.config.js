@@ -10,11 +10,15 @@ module.exports = {
         '7/100': '7vh',
       },
       width: {
-        '95/100' : '95vw',
+        '4/100': '4vw',
+        '96/100' : '96vw',
       },
-      marginRight: {
-        '15vw': '15vw',
+      margin: { 
+        '15vw': '15vw', 
       },
+      boxShadow: {
+        'custom': '-10px 0px 10px 0px rgba(0, 0, 0, 0.2)',
+      }
     },
   },
   variants: {
