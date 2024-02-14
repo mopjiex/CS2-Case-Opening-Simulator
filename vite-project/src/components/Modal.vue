@@ -14,35 +14,55 @@ const closeModal = () => {
 </script>
 
 <template>
-   <div class="modal" v-if="show" >
+   <div class="modal w-full h-screen bg-[#14171b] absolute top-0 left-0 text-[#cfd4d8] pt-8" 
+        v-if="show" 
+    >
     <div class="container mx-auto px-2.5 max-w-[1520px]">
         <div class="modal__content">
-            <h1 class="modal__title">Открыть контейнер</h1>
-            <img :src="`/cases/${cases[index].src}.png`" alt="" class="modal__img">
-            <p class="modal__name">{{ cases[index].nameCase }}</p>
+            <h1 class="modal__title text-center text-6xl mb-3">
+                Открыть контейнер
+            </h1>
+            <img class="modal__img mx-auto mb-4"
+                 :src="`/cases/${cases[index].src}.png`"
+            >
+            <p class="modal__name text-center text-4xl mb-3">
+                {{ cases[index].nameCase }}
+            </p>
         </div>
     </div>
-            <div class="modal__skins-content">
-                <div class="blur"></div>
+            <div class="modal__skins-content py-2 relative h-[60vh]">
+                <div class="blur absolute w-full h-full bg-[#323942] opacity-40 z-1"></div>
                 <div class="container mx-auto px-2.5 max-w-[1520px]">
-                    <h2 class="skins-content__title">
+                    <h2 class="modal__skins-content__title text-[18px] mt-5 mb-2">
                         Внутри находится один из следующих скинов
                     </h2>
-                    <div class="skins">
-                        <div class="skin bg-gradient-to-b from-gray-500" 
-                        v-for="skin in cases[index].skins"
-                        :style="{borderBottom: `4px solid ${skin.color}`}">
-                                <img 
-                                :src="`/cases/revolution/${skin.src}.png`" 
-                                class="skin__img"
-                                >
-                            <p class="skin__desc">
+                    <div class="skins relative flex items-center flex-wrap gap-[30px] 
+                                h-[40vh] overflow-auto z-2 mb-[20px]">
+                        <div class="skin bg-gradient-to-b from-gray-500 
+                                    w-[130px] h-[130px] bg-[#f4faff] p-2" 
+                             v-for="skin in cases[index].skins"
+                             :style="{borderBottom: `4px solid ${skin.color}`, background: skin.background}">
+
+                            <img class="skin__img"
+                                 :src="`/cases/${cases[index].src}/${skin.src}.png`">
+                            <p class="skin__desc mt-10">
                                 {{ skin.nameSkin }}
                             </p>
                         </div>
                     </div>
-                    <div class="modal__btns">
-                        <button class="modal__btn" @click="closeModal">Закрыть</button>
+                    <div class="modal__btns flex justify-end relative z-5 gap-x-5 text-white">
+
+                        <button class="modal__btn-open py-2 px-5 bg-[#0fa055] rounded-md 
+                                       transition-all duration-300 hover:bg-[#14c96b]"
+                                @click="console.log('Открытие кейса')">
+                                       Открыть
+                        </button>
+
+                        <button class="modal__btn-close font-bold transition-all 
+                                       duration-300 hover:text-[#cac9c9]" 
+                                @click="closeModal">
+                                       Закрыть
+                        </button>
                     </div>
                     
                 </div>
@@ -53,79 +73,6 @@ const closeModal = () => {
 
 <style scoped>
 
-
-.modal {
-    width: 100%;
-    height: 100vh;
-    background-color: #14171b;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #cfd4d8;
-    padding-top: 30px;
-}
-
-
-.modal__title,
-.modal__name {
-    text-align: center;
-}
-
-.modal__img {
-    margin: 0 auto 15px auto;
-}
-
-.modal__title {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.modal__name {
-    font-size: 22px;
-}
-
-.skins-content__title {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.modal__skins-content {
-    padding: 20px 0;
-    position: relative;
-    min-height: 60vh;
-}
-
-.blur {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #323942;
-    opacity: 0.4;
-    z-index: 1;
-}
-
-.skins-content__title {
-    margin-top: 20px;
-}
-.skins {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    height: 40vh;
-    overflow: auto;
-    z-index: 2;
-    margin-bottom: 20px;
-}
-
-.skin {
-    width: 130px;
-    height: 130px;
-    background-color: aliceblue;
-    padding: 10px;
-}
-
 .skins::-webkit-scrollbar {
   width: 1px;
 }
@@ -133,21 +80,4 @@ const closeModal = () => {
   background-color: transparent;
 }
 
-.skin__desc {
-    margin-top: 40px;
-}
-
-
-
-.modal__btns {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    z-index: 5;
-}
-
-.modal__btn {
-    font-weight: 700;
-    color: #fff;
-}
 </style>

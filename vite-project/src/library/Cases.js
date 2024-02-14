@@ -1,9 +1,3 @@
-// const cases = [
-//     'Breakout', 'Chroma', 'Chroma2', 'Chroma3', 'Esport2013', 'Esport2013winter',
-//     'Esport2014summer', 'Falchion', 'Gamma', 'Horizon', 'Huntsman', 'Hydra',
-//     'Phoenix', 'Revolver', 'Shadow', 'Spectrum', 'Vanguard', 'Web', 'Wildfire',
-//     'Winter'
-// ]
 
 export const cases = [
     {
@@ -13,102 +7,229 @@ export const cases = [
             {
                 nameSkin: 'SG553 Cyberforce',
                 src: 'cyberforce',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'SCAR-20 Fragments',
                 src: 'fragments',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'P250 Re.built',
                 src: 'rebuilt',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'MAG-7 Insomnia',
                 src: 'insomnia',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'Tec-9 Rebel',
                 src: 'rebel',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'MP9 Featherweight',
                 src: 'featherweight',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'MP5-SD Liquidation',
                 src: 'liquidation',
-                color: 'blue'
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
             },
             {
                 nameSkin: 'MAC-10 Sakkaru',
                 src: 'sakkaru',
-                color: 'purple'
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
             },
             {
                 nameSkin: 'P90 Neoqueen',
                 src: 'neoqueen',
-                color: 'purple'
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
             },
             {
                 nameSkin: 'Glock-18 Umbral Rabbit',
                 src: 'umbralrabbit',
-                color: 'purple'
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
             },
             {
                 nameSkin: 'R8 Banana Cannon',
                 src: 'bananacannon',
-                color: 'purple'
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
             },
             {
                 nameSkin: 'M4A1-S Emphorosaur-S',
                 src: 'emphorosaurs',
-                color: 'purple'
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
             },
             {
                 nameSkin: 'UMP-45 Wild Child',
                 src: 'wildchild',
-                color: 'violet'
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
             },
             {
                 nameSkin: 'P2000 Wicked Sick',
                 src: 'wickedsick',
-                color: 'violet'
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
             },
             {
                 nameSkin: 'AWP Duality',
                 src: 'duality',
-                color: 'violet'
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
             },
             {
                 nameSkin: 'AK-47 Head Shot',
                 src: 'headshot',
-                color: 'red'
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
             },
             {
                 nameSkin: 'M4A4 Temukau',
                 src: 'temukau',
-                color: 'red'
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
             },
             {
                 nameSkin: 'Перчатки',
                 src: 'perchantki',
-                color: 'yellow'
+                color: 'yellow',
+                background: 'linear-gradient(to bottom, #edf3a0, #fff)',
             },
         ]
     },
 
-
-
     {
         nameCase: 'Кейс "Грезы и кошмары"',
         src: 'dreams',
+        skins: [
+            {
+                nameSkin: 'SCAR-20 Экзорцыпа',
+                src: 'scar20',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'MAG-7 Предсказание',
+                src: 'mag7',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Sawed-off Спиритеская доска',
+                src: 'sawedoff',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'P2000 Поднятие духов',
+                src: 'p2000',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'MP5-SD Юный некромант',
+                src: 'mp5sd',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'MAC-10 Заточение',
+                src: 'mac10',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Five-Seven Каракули',
+                src: 'fiveseven',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'XM1014 Зомби-страйк',
+                src: 'xm1014',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'ПП-19 "Бизон" Космокот',
+                src: 'bizon',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'G3SG1 Поляна грез',
+                src: 'g3sg1',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'USP-S Билет в ад',
+                src: 'usps',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'M4A1-S Ночной ужас',
+                src: 'm4a1s',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'MP7 Дух бездны',
+                src: 'xm1014',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'Dual Berettas Плод воображения',
+                src: 'dual',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'FAMAS Быстрые движения глаз',
+                src: 'famas',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'MP9 Звездный защитник',
+                src: 'mp9',
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
+            },
+            {
+                nameSkin: 'AK-47 Пожелание на ночь',
+                src: 'ak47',
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
+            },
+            {
+                nameSkin: 'Ножи',
+                src: 'knife',
+                color: 'yellow',
+                background: 'linear-gradient(to bottom, #edf3a0, #fff)',
+            },
+        ]
     },
+
     {
         nameCase: 'Кейс операции "Хищные воды"',
         src: 'predatory-waters',

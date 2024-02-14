@@ -7,13 +7,13 @@ const menuItems = ['Все', 'Экипировка', 'Графика', 'Конт
                    'Контакт обмена', 'Торговая площадка'];
 
 const modalVisible = ref(false);
-const index = ref(0);
+const indexCase = ref(0);
 
 
-const modalOpen = (idx) => {
+const modalOpen = (index) => {
     modalVisible.value = true;
-    index.value = idx;
-    itemCase(index.value)
+    indexCase.value = index;
+    itemCase(indexCase.value)
 }
 
 const itemCase = idx => {
@@ -25,10 +25,10 @@ const itemCase = idx => {
 <template>
     <myModal
         v-model:show="modalVisible"
-        v-model:index="index"
+        v-model:index="indexCase"
 
     />
-     <section class="inventory bg-[#474a59] h-93/100 pt-3">
+     <section class="inventory bg-[#474a59] h-[93vh] pt-3">
             <div class="container mx-auto px-2.5 max-w-[1520px]">
                 <div class="inventory__top mb-10">
                     <ul class="inventory__icons flex items-center gap-x-10 justify-center">
@@ -47,7 +47,7 @@ const itemCase = idx => {
                     </ul>
                 </div>
 
-                    <div class="inventory__cases h-80/100 flex flex-wrap gap-x-10  gap-y-16 overflow-auto">
+                    <div class="inventory__cases h-[80vh] flex flex-wrap gap-x-10  gap-y-16 overflow-auto">
                     <div class="inventory__case w-44 h-44 bg-gradient-to-b 
                               from-gray-500 border-b-4 border-blue-300 
                                 cursor-pointer transition-all duration-300 hover:shadow-xl" 
