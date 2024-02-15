@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue';
 import {cases} from '@/library/Cases';
-import myModal from '@/components/Modal.vue'
+import caseSkins from '@/views/CaseSkins.vue';
 
 const menuItems = ['Все', 'Экипировка', 'Графика', 'Контейнеры', 'Профиль', 
                    'Контакт обмена', 'Торговая площадка'];
@@ -23,9 +23,9 @@ const itemCase = idx => {
 </script>
 
 <template>
-    <myModal
+    <caseSkins
         v-model:show="modalVisible"
-        v-model:index="indexCase"
+        v-model:caseIndex="indexCase"
 
     />
      <section class="inventory bg-[#474a59] h-[93vh] pt-3">
