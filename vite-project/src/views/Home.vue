@@ -6,13 +6,13 @@
 </script>
 
 <template>
-  <div class="wrapper">
+  <!-- <div class="wrapper"> -->
     <div class="left">
-      <myHeader/>
+      <!-- <myHeader/> -->
       <myMain/>
     </div>
-    <myAside/>
-  </div>
+    <!-- <myAside/> -->
+  <!-- </div>  -->
 </template>
 
 <style scoped>

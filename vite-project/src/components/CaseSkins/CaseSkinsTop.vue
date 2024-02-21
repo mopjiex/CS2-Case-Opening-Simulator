@@ -4,6 +4,8 @@
     const props = defineProps({
         caseIndex: Number,
     })
+
+    
 </script>
 
 <template>

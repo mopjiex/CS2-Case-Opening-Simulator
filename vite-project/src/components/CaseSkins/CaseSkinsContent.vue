@@ -1,4 +1,7 @@
 <script setup>
+//Тут скины с кейса отдельного
+
+
 import {cases} from '@/library/Cases';
 
 const props = defineProps({
@@ -12,11 +15,15 @@ const closePage = () => {
     emit('close');
 }
 
+const openPage = () => {
+    emit('open');
+}
+
 </script>
 
 
 <template>
-    <div class="case-skins-content__inner py-2 relative h-[60vh] mt-[330px]">
+    <div class="case-skins-content__inner py-2 relative h-full w-full mt-[425px]">
         <div class="blur absolute w-full h-full bg-[#323942] opacity-40 z-1"></div>
         <div class="container mx-auto px-2.5 max-w-[1520px]">
             <h2 class="case-skins-content__title text-[18px] mt-5 mb-2">
@@ -41,7 +48,7 @@ const closePage = () => {
             <div class="case-skins-content__btns flex justify-end relative z-5 gap-x-5 text-white">
                 <button class="case-skins-content__btn-open py-2 px-5 bg-[#0fa055] rounded-md 
                             transition-all duration-300 hover:bg-[#14c96b]"
-                        @click="console.log('Открытие кейса')">
+                        @click="openPage">
                             Открыть
                 </button>
 

@@ -1,4 +1,9 @@
+
 <script setup>
+
+//Компонент где все кейсы
+
+
 import {ref} from 'vue';
 import {cases} from '@/library/Cases';
 import caseSkins from '@/views/CaseSkins.vue';
@@ -13,11 +18,6 @@ const indexCase = ref(0);
 const modalOpen = (index) => {
     modalVisible.value = true;
     indexCase.value = index;
-    itemCase(indexCase.value)
-}
-
-const itemCase = idx => {
-    
 }
 
 </script>
@@ -26,9 +26,10 @@ const itemCase = idx => {
     <caseSkins
         v-model:show="modalVisible"
         v-model:caseIndex="indexCase"
-
+        v-if="modalVisible"
     />
-     <section class="inventory bg-[#474a59] h-[93vh] pt-3">
+
+    <section class="inventory bg-[#474a59] h-[100vh] pt-3" v-else>
             <div class="container mx-auto px-2.5 max-w-[1520px]">
                 <div class="inventory__top mb-10">
                     <ul class="inventory__icons flex items-center gap-x-10 justify-center">
@@ -62,7 +63,7 @@ const itemCase = idx => {
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
 </template>
 
 <style scoped>

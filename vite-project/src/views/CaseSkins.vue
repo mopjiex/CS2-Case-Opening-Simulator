@@ -16,21 +16,35 @@ const visibleSlider = ref(false);
 const closePage = () => {
     emit('update:show', false);
 }
+const openPage = () => {
+    visibleSlider.value = true;
+}
+
+const closeModal = () => {
+    visibleSlider.value = false;
+    emit('update:show', false);
+}
+
 </script>
 
 <template>
-    <div class="modal w-full h-screen bg-[#14171b] absolute top-0 left-0 text-[#cfd4d8] pt-8" v-if="show" >
-        <skinsSlider
+    <div class="modal w-full bg-[#14171b] text-[#cfd4d8]" v-if="show" >
+        <skinsSlider v-if="visibleSlider"
             :caseIndex="caseIndex"
-            v-model:showSlider="visibleSlider"
+            @closeModal="closeModal"
         />
-        <caseSkinsTop 
+
+        <div class="wrapper" v-else>
+            <caseSkinsTop 
             :caseIndex="caseIndex"
         />
+
         <caseSkinsContent 
             :caseIndex="caseIndex"
-            @click="closePage"
+            @close="closePage"
+            @open="openPage"
         />
+        </div>
     </div>
 </template>
 
