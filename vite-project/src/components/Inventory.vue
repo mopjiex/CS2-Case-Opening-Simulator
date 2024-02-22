@@ -4,7 +4,7 @@
 //Компонент где все кейсы
 
 
-import {ref} from 'vue';
+import {ref, provide, onMounted, onUnmounted, watch} from 'vue';
 import {cases} from '@/library/Cases';
 import caseSkins from '@/views/CaseSkins.vue';
 
@@ -19,6 +19,25 @@ const modalOpen = (index) => {
     modalVisible.value = true;
     indexCase.value = index;
 }
+
+
+const skinsCases = ref([]);
+provide('skinsCases', skinsCases);
+
+watch(skinsCases, (newVal) => {
+    localStorage.setItem('skinsCases', JSON.stringify(newVal));
+}, {deep: true});
+
+
+onMounted(() => {
+    if(localStorage.getItem('skinsCases')) {
+        skinsCases.value = JSON.parse(localStorage.getItem('skinsCases'));
+    }
+});
+
+onUnmounted(() => {
+    localStorage.removeItem('skinsCases');
+});
 
 </script>
 
@@ -48,7 +67,7 @@ const modalOpen = (index) => {
                     </ul>
                 </div>
 
-                    <div class="inventory__cases h-[80vh] flex flex-wrap gap-x-10  gap-y-16 overflow-auto">
+                <div class="inventory__cases h-[80vh] flex flex-wrap gap-x-10  gap-y-16 overflow-auto">
                     <div class="inventory__case w-44 h-44 bg-gradient-to-b 
                               from-gray-500 border-b-4 border-blue-300 
                                 cursor-pointer transition-all duration-300 hover:shadow-xl" 
@@ -60,6 +79,19 @@ const modalOpen = (index) => {
                         <p class="text text-white mt-10">
                           {{caseItem.nameCase}}
                         </p>
+                    </div>
+
+                    <div class="inventory__case w-44 h-44 bg-gradient-to-b 
+                              from-gray-500 border-b-4 
+                                cursor-pointer transition-all duration-300 hover:shadow-xl" 
+                        :style="{borderBottomColor: skinCases.color, background: skinCases.background}"
+                            v-for="skinCases in skinsCases">
+                        <img  :src="`/cases/${skinCases.nameCase}/${skinCases.src}.png`" 
+                              class="inventory__case-img p-3">
+                        <p class="text text-white mt-10">
+                            {{skinCases.nameSkin}}
+                        </p>
+                        
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <script setup>
+import {ref, inject} from 'vue';
 import {cases} from '@/library/Cases';
-
 
 const props = defineProps({
     skin: Object,
@@ -9,12 +9,23 @@ const props = defineProps({
 })
 
 
+
 const emit = defineEmits();
 
 const closeModal = () => {
      emit('closeModal');
 }
-console.log(props.activeIndex)
+
+
+const skinsCases = inject('skinsCases');
+skinsCases.value.push({
+    src: props.skin[ props.activeIndex].src,
+    background:  props.skin[ props.activeIndex].background,
+    color:  props.skin[ props.activeIndex].color,
+    nameSkin:  props.skin[ props.activeIndex].nameSkin,
+    nameCase:  cases[props.caseIndex].src,
+});
+
 
 </script>
 

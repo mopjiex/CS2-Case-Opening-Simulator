@@ -37,7 +37,7 @@ const openPage = () => {
                     v-for="skin in cases[caseIndex].skins"
                     :style="{borderBottom: `4px solid ${skin.color}`, background: skin.background}">
 
-                    <img class="skin__img"
+                    <img class="skin__img w-[114px] h-[85px] text-center"
                         :src="`/cases/${cases[caseIndex].src}/${skin.src}.png`">
 
                     <p class="skin__desc mt-10">

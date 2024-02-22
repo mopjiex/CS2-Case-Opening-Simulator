@@ -1,9 +1,9 @@
 <script setup>
 import {ref} from 'vue'
-import {cases} from '@/library/Cases';
 import caseSkinsTop from '@/components/CaseSkins/CaseSkinsTop.vue';
 import caseSkinsContent from '@/components/CaseSkins/CaseSkinsContent.vue';
 import skinsSlider from '@/views/SkinsSlider.vue';
+
 const props = defineProps({
     show: Boolean,
     caseIndex: Number,

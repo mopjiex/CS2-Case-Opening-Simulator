@@ -18,7 +18,6 @@
 <style scoped>
   .wrapper {
     min-height: 100vh;
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
 

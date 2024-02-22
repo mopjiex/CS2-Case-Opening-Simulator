@@ -2,6 +2,120 @@
 export const cases = [
     {
         nameCase: 'Революционный кейс',
+        src: 'kilovatt',
+        skins: [
+            {
+                nameSkin: 'SG553 Убежище',
+                src: 'scaut',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Nova Печать тьмы',
+                src: 'nova',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'UMP-45 Мотор',
+                src: 'ump45',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'XM1014 Ирэдзуми',
+                src: 'xm1014',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Tec-9 Шлак',
+                src: 'tec9',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'SSG 08 Катастрофа',
+                src: 'ssg08',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'MAC-10 Световой короб',
+                src: 'mac10',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Sawed-off Аналоговый ввод',
+                src: 'sawedoff',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'MP7 Улыбочка',
+                src: 'mp7',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'FiveSeven Гибрид',
+                src: 'fiveseven',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'Glock-18 Блок-18',
+                src: 'glock18',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'M4A4 Мастер травли',
+                src: 'm4a4',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'Zeus x27',
+                src: 'zeus',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'USP-S Зубоскал',
+                src: 'usps',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'M4A1-S Черный лотос',
+                src: 'm4a1s',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'AWP Хромовая пушка',
+                src: 'awp',
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
+            },
+            {
+                nameSkin: 'AK-47 Наследство',
+                src: 'ak47',
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
+            },
+            {
+                nameSkin: 'Ножи',
+                src: 'knifes',
+                color: 'yellow',
+                background: 'linear-gradient(to bottom, #edf3a0, #fff)',
+            },
+        ]
+    },
+    {
+        nameCase: 'Революционный кейс',
         src: 'revolution',
         skins: [
             {
@@ -233,6 +347,116 @@ export const cases = [
     {
         nameCase: 'Кейс операции "Хищные воды"',
         src: 'predatory-waters',
+        skins: [
+            {
+                nameSkin: 'G3SG1 Наблюдение',
+                src: 'g3sg1',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'AUG Чума',
+                src: 'aug',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'PP-Bizon Люмен',
+                src: 'bizon',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Dual Berattas Протектор',
+                src: 'dual',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'MP7 Диверсант',
+                src: 'mp7',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'MAG-7 Висмутовый спектр',
+                src: 'mag',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'Five-Seven Протокол Подъем',
+                src: 'fiveseven',
+                color: 'blue',
+                background: 'linear-gradient(to bottom, #4040df, #fff)',
+            },
+            {
+                nameSkin: 'XM1014 Настороже',
+                src: 'xm',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'Famas ZX Spectron',
+                src: 'famas',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'USP-S Черный лотос',
+                src: 'usp',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'MP9 Фудзияма',
+                src: 'mp9',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'MAC-10 Коробка с игрушками',
+                src: 'mac',
+                color: 'purple',
+                background: 'linear-gradient(to bottom, rgb(88, 18, 168), #fff)',
+            },
+            {
+                nameSkin: 'SSG 08 Турбовыпад',
+                src: 'ssg',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'M4A4 Ликорис лучистый',
+                src: 'm4a4',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'Glock-18 Нападение жора',
+                src: 'glock',
+                color: 'violet',
+                background: 'linear-gradient(to bottom, #dda2dd, #fff)',
+            },
+            {
+                nameSkin: 'AK-47 Музей элиты',
+                src: 'ak47',
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
+            },
+            {
+                nameSkin: 'Desert Eagle Океанское побережье',
+                src: 'eagle',
+                color: 'red',
+                background: 'linear-gradient(to bottom, #d66868, #fff)',
+            },
+            {
+                nameSkin: 'Ножи',
+                src: 'knifes',
+                color: 'yellow',
+                background: 'linear-gradient(to bottom, #edf3a0, #fff)',
+            },
+        ]
     },
     {
         nameCase: 'Кейс "Змеиный укус"',
