@@ -5,6 +5,7 @@ import InventoryPage from "@/views/InventoryPage.vue";
 import InventoryCases from "@/components/Inventory/InventoryCases.vue";
 import InventoryItem from "@/components/Inventory/InventoryItem.vue";
 import OpenCasesPage from "@/views/OpenCasesPage.vue";
+import SkinsPage from "@/views/SkinsPage.vue";
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: HomePage },
@@ -16,7 +17,8 @@ const routes: RouteRecordRaw[] = [
       { path: '/inventory/case/:id', component: InventoryItem }
     ]
   },
-  {path: '/open', component: OpenCasesPage} // Используйте компонент, а не строку
+  { path: '/open', component: OpenCasesPage },
+  { path: '/skins', component: SkinsPage }
 ];
 
 const router = createRouter({

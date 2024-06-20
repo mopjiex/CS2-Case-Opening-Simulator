@@ -6,13 +6,13 @@ import { Case, SkinCase } from '@/utils/interfaces';
 export const useCaseStore = defineStore('case', () => {
     const casesData = ref<Case[]>([]);
     const casesLoading = ref<boolean>(true);
-   
-    const getCases = async() => {
+
+    const getCases = async () => {
         casesLoading.value = true;
         try {
             const { data } = await axios.get('https://9e969ab0aa511a0e.mokky.dev/cases');
             casesData.value = data;
-        } catch(e) {
+        } catch (e) {
             console.error(e)
         }
         casesLoading.value = false;
@@ -20,17 +20,17 @@ export const useCaseStore = defineStore('case', () => {
 
     const skinsData = ref<SkinCase>({});
     const skinsLoading = ref<boolean>(true);
-    const getSkins = async(id: number) => {
+    const getSkins = async (id: number) => {
         skinsLoading.value = true;
         try {
             const { data } = await axios.get(`https://9e969ab0aa511a0e.mokky.dev/skins/${id}/?_relations=cases`);
             skinsData.value = data;
             console.log(skinsData.value)
-        } catch(e) {
+        } catch (e) {
             console.error(e);
         }
         skinsLoading.value = false;
     }
 
-    return {casesData, casesLoading, skinsData, skinsLoading, getCases, getSkins};
+    return { casesData, casesLoading, skinsData, skinsLoading, getCases, getSkins };
 });

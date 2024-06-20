@@ -19,6 +19,12 @@ const menuItems = ref<MenuItem[]>([
         path: '/inventory',
         name: 'Inventory',
         active: false,
+    },
+    {
+        id: 3,
+        path: '/skins',
+        name: 'Skins',
+        active: false,
     }
 ]);
 </script>

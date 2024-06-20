@@ -20,7 +20,7 @@ interface Skins {
 
 interface SkinCase {
     id?: number,
-    'case_id'?: number,
+    case_id?: number,
     skins?: Skins[]
 }
 
