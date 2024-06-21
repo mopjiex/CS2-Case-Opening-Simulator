@@ -22,7 +22,8 @@ onMounted(caseStore.getCases);
             v-if="!caseStore.casesLoading"
         >
             <div
-                class="case-box py-2 px-4 my-gradient rounded-md cursor-pointer"
+                class="case-box py-2 px-4 my-gradient rounded-md cursor-pointer transition-all duration-300
+                    hover:scale-110"
                 v-for="(itemCase, indexCase) in caseStore.casesData"
                 @click="navigateToCase(indexCase)"
             >

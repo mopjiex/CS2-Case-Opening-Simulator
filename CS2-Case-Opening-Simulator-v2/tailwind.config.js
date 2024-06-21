@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       'poetsenone': ['Poetsen One', 'sans-serif'],
       'jost': ['Jost', 'sans-serif'],
+      'archiv': ['Archivo Black', 'sans-serif']
     }
   },
   plugins: [],

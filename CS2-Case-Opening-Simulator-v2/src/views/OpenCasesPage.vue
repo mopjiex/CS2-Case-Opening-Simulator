@@ -3,9 +3,9 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useCaseStore } from "@/store/CaseStore";
 import { useSkinStore } from "@/store/SkinStore";
-import { bgColorClass } from "@/utils/colorUtils";
 import Slider from "@/components/Slider.vue";
-import { shuffle } from "@/utils/arrayUtils";
+import { shuffle, rand, pushRandomItems } from "@/utils/arrayUtils";
+import { bgColorClass } from "@/utils/colorUtils";
 
 const router = useRouter();
 const store = useCaseStore();
@@ -17,37 +17,30 @@ const isFinished: boolean = ref(false);
 const slideIndex: number = ref(0);
 
 const blueSkins = store.skinsData.skins.filter((item) => item.color === "blue");
-const purpleSkins = store.skinsData.skins.filter((item) => item.color === "purple");
+const purpleSkins = store.skinsData.skins.filter(
+    (item) => item.color === "purple"
+);
 const pinkSkins = store.skinsData.skins.filter((item) => item.color === "pink");
 const redSkins = store.skinsData.skins.filter((item) => item.color === "red");
-const yellowSkins = store.skinsData.skins.filter((item) => item.color === "yellow");
+const yellowSkins = store.skinsData.skins.filter(
+    (item) => item.color === "yellow"
+);
 
-const rand = (min, max) => {
-    return Math.floor(min + Math.random() * (max + 1 - min))
-}
-const Test = (arr, count) => {
-
-for(let i = 0; i < count; i++) {
-    console.log(count)
-    arr.push(arr[rand(0, arr.length - 1)])
-}
-
-return arr;
-}
-
-
-const shuffledSkins = ref(shuffle([...Test(blueSkins, 18), ...Test(purpleSkins, 5), ...pinkSkins, ...redSkins, ...yellowSkins]));
-
-
-
-
+const shuffledSkins = ref(
+    shuffle([
+        ...pushRandomItems(blueSkins, 18),
+        ...pushRandomItems(purpleSkins, 5),
+        ...pinkSkins,
+        ...redSkins,
+        ...yellowSkins,
+    ])
+);
 
 const onSwiper = (swiper: any) => {
     currentSwiper.value = swiper;
 };
 
 const animateSkins = () => {
-    console.log(shuffledSkins.value)
     const recursiveTimeout = () => {
         if (slideIndex.value <= 30) {
             currentSwiper.value.slideNext();
@@ -61,27 +54,17 @@ const animateSkins = () => {
             }, 1500);
         }
     };
-
     recursiveTimeout();
 };
 
 setTimeout(animateSkins, 100);
 
-
-
-const skinAddition = async() => {
-
-    skinStore.testArray.push(shuffledSkins.value[slideIndex.value - 2]);
-    console.log(skinStore.testArray)
-    skinStore.postInventory(shuffledSkins.value[slideIndex.value - 2])
+const skinAddition = () => {
+    skinStore.postInventory(shuffledSkins.value[slideIndex.value + 1]);
 };
 
 const handleClose = () => {
     skinAddition();
-    // console.log(skinStore.skinData);
-    console.log(shuffledSkins.value[slideIndex.value])
-    
-
     isFinished.value = false;
     router.push("/inventory");
 };
@@ -89,7 +72,7 @@ const handleClose = () => {
 
 <template>
     <div
-        class="min-h-screen bg-no-repeat bg-center bg-cover py-24"
+        class="min-h-screen bg-no-repeat bg-center bg-cover py-24 font-archiv"
         style="background-image: url(/images/openCase-bg.jpg)"
     >
         <div class="container mx-auto px-2">
@@ -110,7 +93,9 @@ const handleClose = () => {
                     <img :src="shuffledSkins[slideIndex + 1].image" alt="" />
                     <div
                         class="h-2 w-full"
-                        :class="bgColorClass(shuffledSkins[slideIndex + 1].color)"
+                        :class="
+                            bgColorClass(shuffledSkins[slideIndex + 1].color)
+                        "
                     ></div>
                 </div>
 

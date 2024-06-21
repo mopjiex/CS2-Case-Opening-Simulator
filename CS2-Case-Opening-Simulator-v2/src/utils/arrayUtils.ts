@@ -7,5 +7,16 @@ const shuffle = (array) => {
     return array
 }
 
+const rand = (min, max) => {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+}
 
-export { shuffle }
+const pushRandomItems = (arr, count) => {
+    for (let i = 0; i < count; i++) {
+        arr.push(arr[rand(0, arr.length - 1)]);
+    }
+
+    return arr;
+}
+
+export { shuffle, rand, pushRandomItems }

@@ -2,8 +2,8 @@ import { createWebHistory, createRouter } from "vue-router";
 import { RouteRecordRaw } from 'vue-router';
 import HomePage from "@/views/HomePage.vue";
 import InventoryPage from "@/views/InventoryPage.vue";
-import InventoryCases from "@/components/Inventory/InventoryCases.vue";
-import InventoryItem from "@/components/Inventory/InventoryItem.vue";
+import InventoryCases from "@/components/InventoryCases/InventoryCases.vue";
+import InventoryItem from "@/components/InventoryCases/InventoryItem.vue";
 import OpenCasesPage from "@/views/OpenCasesPage.vue";
 import SkinsPage from "@/views/SkinsPage.vue";
 
