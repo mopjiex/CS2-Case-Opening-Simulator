@@ -51,14 +51,19 @@ export const useStore = defineStore('store', () => {
 
         isSkinLoading.value = false
     }
+
+    const deleteItemInventory = async(id) => {
+        return await axios.delete(`https://9e969ab0aa511a0e.mokky.dev/inventory/${id}`)
+    }
+
     //Остальное
     const isPanelActive = ref(false)
-
+    const arr = ref([])
 
     return {
         casesData, casesLoading, skinsData, skinsLoading, getCases, getSkins,
-        skinInventory, testArray, isSkinLoading, postInventory, fetchInventory,
-        isPanelActive
+        skinInventory, testArray, isSkinLoading, postInventory, fetchInventory, deleteItemInventory,
+        isPanelActive, arr
     }
 
 })

@@ -3,7 +3,7 @@ import { ref, watch } from "vue";
 import { bgColorClass, textColorClass } from "@/utils";
 import { useStore } from "@/store";
 
-const store = useStore()
+const store = useStore();
 
 const { skins } = defineProps({
     skins: Array,
@@ -13,6 +13,13 @@ const items = ref(skins.map(() => ({ checked: false })));
 
 const checkboxChecked = (index) => {
     items.value[index].checked = !items.value[index].checked;
+    if (items.value[index].checked) {
+        store.arr.push(skins[index]);
+        console.log("Добавление - ", store.arr);
+    } else {
+        store.arr = store.arr.filter((item) => item.id !== skins[index].id);
+        console.log("Удаление - ", store.arr);
+    }
 };
 
 watch(

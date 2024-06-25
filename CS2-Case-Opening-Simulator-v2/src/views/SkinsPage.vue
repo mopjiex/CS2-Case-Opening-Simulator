@@ -17,6 +17,30 @@ const deactivatePanel = () => {
     store.isPanelActive = false;
 };
 
+const deleteItemAll = async() => {
+    while(store.skinInventory.length > 0) {
+        const itemId = store.skinInventory[0].id
+        console.log(`${store.skinInventory[0]}[${itemId}] - удален`)
+        await store.deleteItemInventory(itemId)
+        store.skinInventory = store.skinInventory.filter(item => item.id !== itemId)
+    }
+}
+
+
+const deleteItem = async () => {
+    while(store.arr.length > 0) {
+        const itemId = store.arr[0].id
+        const itemExists = store.skinInventory.some(item => item.id === itemId)
+        if(itemExists) {
+            console.log(`${store.skinInventory[0]}[${itemId}] - удален`)
+            await store.deleteItemInventory(itemId)
+            
+        }
+        store.skinInventory = store.skinInventory.filter(item => item.id !== itemId)
+        store.arr = store.arr.filter(item => item.id !== itemId)
+    }
+}
+
 onMounted(store.fetchInventory);
 </script>
 
@@ -53,6 +77,7 @@ onMounted(store.fetchInventory);
                     btn1Text="black"
                     btn2Text="black"
                     :btn1Func="activatePanel"
+                    :btn2Func="deleteItemAll"
                 />
                 <ButtonsPanel
                     v-else
@@ -63,6 +88,7 @@ onMounted(store.fetchInventory);
                     btn1Text="black"
                     btn2Text="white"
                     :btn1Func="deactivatePanel"
+                    :btn2Func="deleteItem"
                 />
             </div>
 
