@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="text-xl mb-6 bg-[#6C5B7B] w-[600px] py-2 px-6">
+    <div class="text-xl bg-[#6C5B7B] w-[600px] py-2 px-6">
         <h2>
             Сумма потраченных рублей на ключи:
             {{ keyCost }}руб

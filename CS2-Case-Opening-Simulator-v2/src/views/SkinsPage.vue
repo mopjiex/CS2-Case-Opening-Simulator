@@ -1,15 +1,23 @@
 <script setup>
-import { useSkinStore } from "@/store/SkinStore";
-import { bgColorClass, textColorClass } from "@/utils/colorUtils";
+import { bgColorClass, textColorClass, keyCost, skinValue, profitLoss } from "@/utils";
 import { onMounted, ref } from "vue";
-import { keyCost, skinValue, profitLoss } from "@/utils/skinCalculations";
 import SkinProfitSummary from "@/components/InventorySkins/SkinProfitSummary.vue";
 import SkinList from "@/components/InventorySkins/SkinList.vue";
+import ButtonsPanel from "@/components/InventorySkins/ButtonsPanel.vue";
+import { useStore } from "@/store";
+const store = useStore()
 
 
-const skinStore = useSkinStore();
 
-onMounted(skinStore.fetchInventory);
+const activatePanel = () => {
+    store.isPanelActive = true;
+};
+
+const deactivatePanel = () => {
+    store.isPanelActive = false;
+};
+
+onMounted(store.fetchInventory);
 </script>
 
 <template>
@@ -20,20 +28,48 @@ onMounted(skinStore.fetchInventory);
         <div
             class="container mx-auto px-2"
             v-if="
-                !skinStore.isSkinLoading && skinStore.skinInventory.length !== 0
+                !store.isSkinLoading && store.skinInventory.length !== 0
             "
         >
             <h1 class="text-4xl text-center mb-6">Инвентарь скинов</h1>
-            <SkinProfitSummary
-                :keyCost="keyCost(skinStore.skinInventory.length)"
-                :skinValue="skinValue(skinStore.skinInventory)"
-                :profitLoss="profitLoss(skinStore.skinInventory, skinStore.skinInventory.length)"
-            />
+            <div class="flex items-end justify-between mb-6">
+                <SkinProfitSummary
+                    :keyCost="keyCost(store.skinInventory.length)"
+                    :skinValue="skinValue(store.skinInventory)"
+                    :profitLoss="
+                        profitLoss(
+                            store.skinInventory,
+                            store.skinInventory.length
+                        )
+                    "
+                />
+
+                <ButtonsPanel
+                    v-if="!store.isPanelActive"
+                    btn1Desc="Выбрать"
+                    btn2Desc="Удалить все"
+                    btn1Bg="#66C7B4"
+                    btn2Bg="#66C7B4"
+                    btn1Text="black"
+                    btn2Text="black"
+                    :btn1Func="activatePanel"
+                />
+                <ButtonsPanel
+                    v-else
+                    btn1Desc="Убрать все"
+                    btn2Desc="Удалить"
+                    btn1Bg="#99CCFF"
+                    btn2Bg="#FF4500"
+                    btn1Text="black"
+                    btn2Text="white"
+                    :btn1Func="deactivatePanel"
+                />
+            </div>
+
             <SkinList
-                :skins="skinStore.skinInventory"
+                :skins="store.skinInventory"
             />
-           
         </div>
-        <div class="" v-else>Нет скинов!</div>
+        <div class="text-4xl text-center" v-else>Нет скинов!</div>
     </div>
 </template>

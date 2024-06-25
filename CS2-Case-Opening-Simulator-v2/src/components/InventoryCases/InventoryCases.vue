@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { useCaseStore } from "@/store/CaseStore";
 import { useRouter } from "vue-router";
+import { useStore } from "@/store";
 
-const caseStore = useCaseStore();
-
+const store = useStore()
 const router = useRouter();
 
 const navigateToCase = (index: number): void => {
-    router.push(`/inventory/case/${caseStore.casesData[index].id}`);
+    router.push(`/inventory/case/${store.casesData[index].id}`);
 };
 
-onMounted(caseStore.getCases);
+onMounted(store.getCases);
 </script>
 
 <template>
@@ -19,12 +18,12 @@ onMounted(caseStore.getCases);
         <h1 class="text-4xl text-center mb-6">Инвентарь кейсов</h1>
         <div
             class="flex gap-4 flex-wrap justify-center text-black"
-            v-if="!caseStore.casesLoading"
+            v-if="!store.casesLoading"
         >
             <div
                 class="case-box py-2 px-4 my-gradient rounded-md cursor-pointer transition-all duration-300
                     hover:scale-110"
-                v-for="(itemCase, indexCase) in caseStore.casesData"
+                v-for="(itemCase, indexCase) in store.casesData"
                 @click="navigateToCase(indexCase)"
             >
                 <div class="flex items-center mx-auto w-32 h-32">

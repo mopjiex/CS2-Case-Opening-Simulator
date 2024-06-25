@@ -1,20 +1,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useCaseStore } from "@/store/CaseStore";
-import { useSkinStore } from "@/store/SkinStore";
 import Slider from "@/components/Slider.vue";
-import { shuffle, rand, pushRandomItems } from "@/utils/arrayUtils";
-import { bgColorClass } from "@/utils/colorUtils";
+import { bgColorClass, shuffle, rand, pushRandomItems } from "@/utils";
+import { useStore } from "@/store";
 
 const router = useRouter();
-const store = useCaseStore();
-const skinStore = useSkinStore();
+const store = useStore();
 
-const currentSwiper: any = ref(null);
-const slideInterval: number = ref(100);
-const isFinished: boolean = ref(false);
-const slideIndex: number = ref(0);
+const currentSwiper = ref<any>(null);
+const slideInterval = ref<number>(100);
+const isFinished = ref<boolean>(false);
+const slideIndex = ref<number>(0);
 
 const blueSkins = store.skinsData.skins.filter((item) => item.color === "blue");
 const purpleSkins = store.skinsData.skins.filter(
@@ -60,7 +57,7 @@ const animateSkins = () => {
 setTimeout(animateSkins, 100);
 
 const skinAddition = () => {
-    skinStore.postInventory(shuffledSkins.value[slideIndex.value + 1]);
+    store.postInventory(shuffledSkins.value[slideIndex.value + 1]);
 };
 
 const handleClose = () => {

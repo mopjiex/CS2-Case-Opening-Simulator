@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import Menu from '@/components/Menu.vue';
-
+import Menu from "@/components/Menu.vue";
 </script>
 
 <template>
     <div class="app">
-        <Menu/>
-        <RouterView/>
+        <Menu />
+        <RouterView />
     </div>
 </template>

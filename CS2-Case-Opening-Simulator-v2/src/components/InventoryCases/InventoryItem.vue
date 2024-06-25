@@ -1,41 +1,36 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useCaseStore } from "@/store/CaseStore";
+import { useStore } from "@/store";
+import { bgColorClass } from "@/utils";
 
 const route = useRoute();
 const router = useRouter();
 const ID = route.params.id;
 
-const caseStore = useCaseStore();
-
-const colors: Record<string, string> = {
-    blue: "blue",
-    purple: "purple",
-    pink: "pink",
-    red: "red",
-    yellow: "yellow",
-};
+const store = useStore();
 
 const openCase = () => {
     router.push(`/open`);
 };
 
 onMounted(() => {
-    caseStore.getSkins(+ID);
+    store.getSkins(+ID);
     console.log(+ID);
 });
+
+//:class="skin.color ? colors[skin.color] : ''"
 </script>
 
 <template>
     <div
         class="flex justify-center gap-8 flex-wrap mb-16 font-archiv"
-        v-if="!caseStore.skinsLoading"
+        v-if="!store.skinsLoading"
     >
         <div
             class="p-6 text-black font-bold rounded-md flex flex-col justify-between items-center w-[270px]"
-            v-for="skin in caseStore.skinsData.skins"
-            :class="skin.color ? colors[skin.color] : ''"
+            v-for="skin in store.skinsData.skins"
+            :style="{ backgroundColor: bgColorClass(skin.color) }"
         >
             <div class="w-[130px] h-[100px] mb-6">
                 <img :src="skin.image" />
