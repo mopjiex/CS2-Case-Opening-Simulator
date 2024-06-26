@@ -52,7 +52,7 @@ export const useStore = defineStore('store', () => {
         isSkinLoading.value = false
     }
 
-    const deleteItemInventory = async(id) => {
+    const deleteItemInventory = async (id) => {
         return await axios.delete(`https://9e969ab0aa511a0e.mokky.dev/inventory/${id}`)
     }
 
