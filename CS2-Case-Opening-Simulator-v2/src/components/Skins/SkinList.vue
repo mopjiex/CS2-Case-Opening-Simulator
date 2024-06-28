@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, onUnmounted } from "vue";
 import { bgColorClass, textColorClass } from "@/utils";
 import { useStore } from "@/store";
 
@@ -28,6 +28,8 @@ watch(
         if (!value) items.value.forEach((item) => (item.checked = false));
     }
 );
+
+onUnmounted(() => store.isPanelActive = false)
 </script>
 
 <template>
@@ -49,8 +51,9 @@ watch(
                 v-for="(skin, index) in skins"
             >
                 <div class="">
-                    <h2 class="text-center font-bol mb-6">
-                        {{ skin.name }}
+                    <h2 class="text-center mb-6">
+                        {{ skin.weapon_name }}
+                        {{ skin.skin_name }}
                     </h2>
                 </div>
 

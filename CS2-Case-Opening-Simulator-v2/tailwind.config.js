@@ -5,8 +5,11 @@ export default {
     fontFamily: {
       'poetsenone': ['Poetsen One', 'sans-serif'],
       'jost': ['Jost', 'sans-serif'],
-      'archiv': ['Archivo Black', 'sans-serif']
+      'archiv': ['Archivo Black', 'sans-serif'],
+      'kanit': ['Kanit', 'sans-serif'],
+      'montserrat': ['Montserrat', 'sans-serif']
     }
   },
   plugins: [],
+  
 }

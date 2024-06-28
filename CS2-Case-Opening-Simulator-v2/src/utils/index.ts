@@ -65,8 +65,39 @@ const profitLoss = (price, skinsLength) => {
 
 
 
+
+//Прочее
+
+const avatars = [
+    "/avatars/av-1.jpg",
+    "/avatars/av-2.jpg",
+    "/avatars/av-3.jpg",
+    "/avatars/av-4.jpg",
+    "/avatars/av-5.jpg",
+    "/avatars/av-6.jpg",
+    "/avatars/av-7.jpg",
+    "/avatars/av-8.jpg",
+    "/avatars/av-9.jpg",
+    "/avatars/av-10.jpg",
+];
+
+
+/* 
+    ЦВЕТА
+    Open - #3CB371
+    Open-hover - #48d889
+    Close - #93A8AC
+
+    Choose - #92A8D1
+    Delete - #E74C3C
+*/
+
+
+
+
 export {
     shuffle, rand, pushRandomItems,
     bgColorClass, textColorClass,
-    keyCost, skinValue, profitLoss
+    keyCost, skinValue, profitLoss,
+    avatars
 }

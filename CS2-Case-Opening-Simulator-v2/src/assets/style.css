@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer utilities {
    .my-gradient {
@@ -42,4 +37,62 @@
       background: -moz-linear-gradient(225deg, rgb(255, 236, 0), rgb(238, 229, 121));
       background: linear-gradient(225deg, rgb(255, 236, 0), rgb(238, 229, 121));
    }
+
+   .menu {
+      background: -webkit-linear-gradient(270deg, rgba(219, 219, 219, .8), rgba(94, 94, 94, .8));
+      background: -moz-linear-gradient(270deg, rgba(219, 219, 219, .8), rgba(94, 94, 94, .8));
+      background: linear-gradient(270deg, rgba(219, 219, 219, .8), rgba(94, 94, 94, .8));
+      backdrop-filter: blur(6px);
+   }
+
+   .menu-2 {
+      background: -webkit-linear-gradient(180deg, rgba(71, 75, 74, .8), rgba(223, 223, 223, .8));
+      background: -moz-linear-gradient(180deg, rgba(71, 75, 74, .8), rgba(223, 223, 223, .8));
+      background: linear-gradient(180deg, rgba(71, 75, 74, .8), rgba(223, 223, 223, .8));
+      backdrop-filter: blur(6px);
+   }
+
+   .skins {
+      background: -webkit-linear-gradient(0deg, rgb(231, 234, 234), rgb(78, 82, 82));
+      background: -moz-linear-gradient(0deg, rgb(231, 234, 234), rgb(78, 82, 82));
+      background: linear-gradient(0deg, rgb(231, 234, 234), rgb(78, 82, 82));
+      backdrop-filter: blur(6px);
+   }
+
+   .bg {
+      background: -webkit-linear-gradient(225deg, rgb(34, 34, 34), rgb(163, 163, 163));
+      background: -moz-linear-gradient(225deg, rgb(34, 34, 34), rgb(163, 163, 163));
+      background: linear-gradient(225deg, rgb(34, 34, 34), rgb(163, 163, 163));
+   }
+
+   .open {
+      background-color: #3CB371;
+      transition: all .3s;
+   }
+
+   .open:hover {
+      background-color: #48d889;
+   }
+
+   .delete {
+      background-color: #E74C3C;
+      transition: all .3s;
+   }
+
+   .delete:hover {
+      background-color: #f5422e;
+   }
+
+   .choose {
+      background-color:  #92A8D1;
+      transition: all .3s;
+   }
+
+   .choose:hover {
+      background-color:  #a3bbe9;
+   }
+
+   
 }
+
+

@@ -2,12 +2,6 @@
 import { ref, onMounted } from "vue";
 import { MenuItem } from "@/utils/interfaces";
 
-const menuActive = (index: number): void => {
-    menuItems.value.map((item) => (item.active = false));
-    menuItems.value[index].active = true;
-    localStorage.setItem("menu", JSON.stringify(menuItems.value));
-};
-
 const menuItems = ref<MenuItem[]>([
     {
         id: 1,
@@ -27,42 +21,48 @@ const menuItems = ref<MenuItem[]>([
         name: "Skins",
         active: false,
     },
+    {
+        id: 4,
+        path: "/inventory",
+        name: "Inventory",
+        active: false,
+    },
 ]);
 
-onMounted(() => {
-    const activeMenu = localStorage.getItem('menu')
-    if(activeMenu) menuItems.value = JSON.parse(activeMenu)
-});
 
 </script>
 
 <template>
-    <div class="menu absolute left-0 right-0 pt-4">
-        <div class="container mx-auto px-2">
-            <div class="menu-content flex items-center justify-between">
-                <div class="menu-logo w-10 h-10">
-                    <img class="rounded-xl" src="/images/logo.jpg" />
+    <div class="absolute left-0 right-0 menu text-white text-2xl font-kanit uppercase">
+        <div class="container mx-auto px-2 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-x-4">
+                    <button class="w-6 h-6">
+                        <RouterLink :to="menuItems[0].path">
+                            <img src="/icons/home.png" alt="" />
+                        </RouterLink>
+                    </button>
+                    <button class="w-6 h-6">
+                        <img src="/icons/settings.svg" alt="" />
+                    </button>
+                    <button class="w-6 h-6">
+                        <img src="/icons/quit.png" alt="" />
+                    </button>
                 </div>
-                <div class="menu-nav">
-                    <ul
-                        class="menu flex items-center gap-x-6 text-[#F1FAEE] text-2xl font-poetsenone"
-                    >
-                        <li
-                            class="transition-all duration-300"
-                            :class="
-                                menuItem.active
-                                    ? 'text-[#A8DADC]'
-                                    : 'hover:text-white'
-                            "
-                            v-for="(menuItem, menuIndex) in menuItems"
-                            :key="menuItem.id"
-                            @click="menuActive(menuIndex)"
-                        >
-                            <RouterLink :to="menuItem.path">{{
-                                menuItem.name
-                            }}</RouterLink>
+
+                <div class="">
+                    <ul class="flex items-center gap-x-16">
+                        <li class="hover:text-[#70D6FF]">
+                            <RouterLink :to="menuItems[3].path">
+                                {{ menuItems[3].name }}
+                            </RouterLink>
                         </li>
+                        <li>Play</li>
+                        <li>News</li>
                     </ul>
+                </div>
+                <div class="">
+                    <!-- Пустой див чтобы вверний див был по середине-->
                 </div>
             </div>
         </div>
