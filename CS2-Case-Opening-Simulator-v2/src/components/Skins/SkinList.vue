@@ -1,17 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch, onUnmounted } from "vue";
 import { bgColorClass, textColorClass } from "@/utils";
 import { useStore } from "@/store";
+import { Skin } from "@/utils/interfaces";
 
 const store = useStore();
 
 const { skins } = defineProps({
-    skins: Array,
+    skins: Array<Skin>,
 });
 
 const items = ref(skins.map(() => ({ checked: false })));
 
-const checkboxChecked = (index) => {
+const checkboxChecked = (index: number) => {
     items.value[index].checked = !items.value[index].checked;
     if (items.value[index].checked) {
         store.arr.push(skins[index]);

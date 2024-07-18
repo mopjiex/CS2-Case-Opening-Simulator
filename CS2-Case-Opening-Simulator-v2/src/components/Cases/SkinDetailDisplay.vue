@@ -1,9 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { bgColorClass } from "@/utils";
+import { ISkin } from "@/interfaces";
+
+
 
 defineProps({
-    shiffledSkins: Object,
-    close: Function,
+    shiffledSkins: {
+        type: Object
+    },
+    close: Function
 })
 
 </script>
@@ -21,7 +26,7 @@ defineProps({
             }"
         ></div>
         <div class="mb-6 bg-[#ddd]">
-            <img :src="shiffledSkins.image" alt="" />
+            <img :src="shiffledSkins.image"/>
             <div
                 class="h-2 w-full"
                 :class="bgColorClass(shiffledSkins.color)"

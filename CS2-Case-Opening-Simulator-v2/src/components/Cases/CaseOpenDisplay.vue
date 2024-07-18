@@ -7,7 +7,7 @@ import { storeToRefs } from "pinia";
 
 const route = useRoute();
 const router = useRouter();
-const ID = route.params.id;
+const ID: number = +route.params.id;
 
 const store = useStore();
 const { casesData, skinsData, skinsLoading } = storeToRefs(store);
@@ -47,7 +47,7 @@ onMounted(() => {
             >
                 <div
                     class="text-black flex flex-col justify-between max-w-[160px] w-[100%]"
-                    v-for="skin in skinsData.skins"
+                    v-for="(skin) in skinsData.skins"
                 >
                     <div
                         class="px-2 py-2 skins border-l-8 mb-2"
@@ -60,9 +60,9 @@ onMounted(() => {
 
                     <div class="pl-2">
                         <h2 class="text-white text-sm">
-                            {{ skin.weapon_name }}
+                            {{ skin.weapon_name ? skin.weapon_name : '' }}
                         </h2>
-                        <h2 class="text-[#ddd]">{{ skin.skin_name }}</h2>
+                        <h2 class="text-[#ddd]">{{ skin.skin_name ? skin.skin_name : '' }}</h2>
                     </div>
                 </div>
             </div>

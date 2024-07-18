@@ -1,5 +1,5 @@
 //Методы для массива
-const shuffle = (array) => {
+const shuffle = (array: anu[]): any[] => {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -8,11 +8,11 @@ const shuffle = (array) => {
     return array
 }
 
-const rand = (min, max) => {
+const rand = (min: number, max: number): number => {
     return Math.floor(min + Math.random() * (max + 1 - min));
 }
 
-const pushRandomItems = (arr, count) => {
+const pushRandomItems = (arr: any[], count: number): any[] => {
     for (let i = 0; i < count; i++) {
         arr.push(arr[rand(0, arr.length - 1)]);
     }
@@ -47,7 +47,7 @@ const textColorClass = (color: string): string => {
 
 //Методы для калькулятора скинов
 
-const keyCost = (skinsLength) => {
+const keyCost = (skinsLength: number): number => {
     return skinsLength * 230;
 };
 
@@ -68,7 +68,7 @@ const profitLoss = (price, skinsLength) => {
 
 //Прочее
 
-const avatars = [
+const avatars: string[] = [
     "/avatars/av-1.jpg",
     "/avatars/av-2.jpg",
     "/avatars/av-3.jpg",

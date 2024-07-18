@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
     keyCost: Number,
     skinValue: Number,

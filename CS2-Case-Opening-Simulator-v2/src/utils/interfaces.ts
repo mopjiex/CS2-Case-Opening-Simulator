@@ -24,7 +24,15 @@ interface SkinCase {
     skins?: Skins[]
 }
 
-export type {MenuItem, Case, Skins, SkinCase};
+interface Skin {
+    weapon_name: string
+    skin_name: string
+    color: string
+    image: string
+}
+
+
+export type {MenuItem, Case, Skins, SkinCase, Skin};
 
 
 
